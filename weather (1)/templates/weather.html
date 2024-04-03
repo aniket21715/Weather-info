@@ -1,0 +1,55 @@
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+        p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .weather-info {
+            margin-top: 20px;
+        }
+        .weather-info p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        .weather-info h2 {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Information for {{ weather_info.city }}, {{ weather_info.country }}</h1>
+        <div class="weather-info">
+            <h2>Current Conditions</h2>
+            <p><strong>Temperature:</strong> {{ weather_info.temperature }}°C</p>
+            <p><strong>Description:</strong> {{ weather_info.description }}</p>
+            <p><strong>Humidity:</strong> {{ weather_info.humidity }}%</p>
+            <p><strong>Wind Speed:</strong> {{ weather_info.wind_speed }} m/s</p>
+        </div>
+    </div>
+</body>
+</html>
